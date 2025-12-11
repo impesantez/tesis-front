@@ -1,0 +1,56 @@
+.sales-report-container {
+  background-color: #f8f7f3;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.sales-title {
+  color: #1f392f;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.sales-subtitle {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sales-table {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 70%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #2b4c3f;
+  color: white;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.unauthorized {
+  text-align: center;
+  color: #a44c4c;
+  font-weight: bold;
+  margin-top: 50px;
+}

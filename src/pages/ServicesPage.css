@@ -1,0 +1,318 @@
+.services-container {
+  padding: 40px;
+  background-color: #f8f7f3;
+  min-height: 100vh;
+}
+
+.services-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #1f392f;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.service-form {
+  background-color: #e8f0ec;
+  border-radius: 12px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  gap: 12px;
+}
+
+.service-form select,
+.service-form input {
+  border: 1px solid #b5c6bd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.save-service-btn {
+  background-color: #2b4c3f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-service-btn:hover {
+  background-color: #223a31;
+}
+
+.categories-grid {
+  display: flex;                /* 🟩 en vez de grid */
+  flex-wrap: wrap;              /* 🟩 permite que bajen/ suban */
+  gap: 32px;
+  align-items: flex-start;      /* 🟩 evita alturas iguales */
+}
+
+
+.category-card {
+  background-color: #f4f8f5;
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid #e2e9e5;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: auto;                 /* 🟩 IMPORTANTE: ALTURA AUTOMÁTICA */
+}
+
+
+.category-card:hover {
+  transform: translateY(-3px);
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1f392f;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid #cddbd4;
+  padding-bottom: 5px;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.service-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f392f;
+}
+
+.service-price {
+  font-size: 0.95rem;
+  color: #2b4c3f;
+}
+
+.service-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.delete-btn {
+  background-color: #a44c4c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #8c3e3e;
+}
+
+.empty-category {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 10px;
+}
+.availability-section {
+  margin-top: 8px;
+}
+
+.days-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.day-chip {
+  background-color: #dcefe6;
+  color: #1f392f;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.no-days {
+  color: #777;
+  font-style: italic;
+}
+/* ==== CONTAINER ==== */
+.services-container {
+  padding: 40px;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ==== TITLE ==== */
+.services-title {
+  text-align: center;
+  font-size: 2.3rem;
+  color: #2b4a3d;
+  margin-bottom: 35px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #c9b27b;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ==== FORM ==== */
+.service-form {
+  background-color: #fafafa;
+  border-radius: 14px;
+  padding: 22px 28px;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-form select,
+.service-form input {
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  color: #2b4a3d;
+}
+
+.save-service-btn {
+  background-color: #2b4a3d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.save-service-btn:hover {
+  background-color: #223a31;
+}
+
+/* ==== GRID ==== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 32px;
+}
+
+/* ==== CATEGORY CARD PREMIUM ==== */
+.luxury-category {
+  flex: 1 1 360px;              /* 🟩 ocupa mínimo 360px y luego se adapta */
+  max-width: 500px;             /* opcional, para que no crezca demasiado */
+}
+
+
+.luxury-category:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ==== CATEGORY TITLE ==== */
+.luxury-title {
+  text-align: center;
+  color: #2b4a3d;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #c9b27b;
+}
+
+/* ==== SERVICE CARD ==== */
+.luxury-service-card {
+  background: white;
+  border-radius: 14px;
+  padding: 14px 18px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease;
+}
+
+.luxury-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* SERVICE INFO */
+.service-name {
+  font-size: 1rem;
+  color: #2b4a3d;
+  font-weight: 600;
+}
+
+.service-price {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* SERVICE ACTIONS */
+.service-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn {
+  background: #2b4a3d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #a44c4c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.empty-category {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}

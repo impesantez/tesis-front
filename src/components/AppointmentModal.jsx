@@ -1,0 +1,271 @@
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import "./AppointmentModal.css";
+
+export default function AppointmentModal({
+  onClose,
+  onSave,
+  existingData,
+  nailTechs,
+  services,
+}) {
+  const [formData, setFormData] = useState({
+    clientName: "",
+    clientEmail: "",
+    clientPhone: "",
+    date: "",
+    startTime: "",
+    endTime: "",
+    nailTechId: "",
+    serviceIds: [],
+  });
+
+  const selectRef = useRef(null);
+
+  useEffect(() => {
+    if (!existingData) {
+      const today = new Date();
+      const y = today.getFullYear();
+      const m = String(today.getMonth() + 1).padStart(2, "0");
+      const d = String(today.getDate()).padStart(2, "0");
+      setFormData((prev) => ({ ...prev, date: `${y}-${m}-${d}` }));
+    }
+  }, [existingData]);
+
+  useEffect(() => {
+    if (existingData) {
+      setFormData({
+        clientName: existingData.client?.name || existingData.clientName || "",
+        clientEmail: existingData.client?.email || existingData.clientEmail || "",
+        clientPhone: existingData.client?.phone || existingData.clientPhone || "",
+        date: existingData.date || "",
+        startTime: existingData.startTime || "",
+        endTime: existingData.endTime || "",
+        nailTechId: existingData.nailTech?.id?.toString() || "",
+        serviceIds: existingData.services?.map((s) => s.id.toString()) || [],
+      });
+    }
+  }, [existingData]);
+
+  const allowedServiceIds = useMemo(() => {
+    if (!formData.nailTechId) return null;
+    const tech = nailTechs.find(
+      (t) => String(t.id) === String(formData.nailTechId)
+    );
+    if (!tech || !tech.services) return [];
+    return tech.services.map((s) => String(s.id));
+  }, [formData.nailTechId, nailTechs]);
+
+  const filteredServices = useMemo(() => {
+    if (!allowedServiceIds) return services;
+    return services.filter((s) => allowedServiceIds.includes(String(s.id)));
+  }, [services, allowedServiceIds]);
+
+  const groupedServices = useMemo(() => {
+    return filteredServices.reduce((acc, svc) => {
+      const cat = svc.category || "Other";
+      if (!acc[cat]) acc[cat] = [];
+      acc[cat].push(svc);
+      return acc;
+    }, {});
+  }, [filteredServices]);
+
+  useEffect(() => {
+    if (!allowedServiceIds) return;
+    setFormData((prev) => ({
+      ...prev,
+      serviceIds: prev.serviceIds.filter((id) =>
+        allowedServiceIds.includes(String(id))
+      ),
+    }));
+  }, [allowedServiceIds]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleServiceClick = (e) => {
+    const option = e.target;
+    if (option.tagName !== "OPTION") return;
+
+    const value = option.value;
+    e.preventDefault();
+    setFormData((prev) => {
+      const already = prev.serviceIds.includes(value);
+      const newServices = already
+        ? prev.serviceIds.filter((id) => id !== value)
+        : [...prev.serviceIds, value];
+
+      Array.from(selectRef.current.options).forEach((opt) => {
+        opt.selected = newServices.includes(opt.value);
+      });
+
+      return { ...prev, serviceIds: newServices };
+    });
+  };
+
+  const diffMinutes = (start, end) => {
+    if (!start || !end) return null;
+    const [sh, sm] = start.split(":").map(Number);
+    const [eh, em] = end.split(":").map(Number);
+    return eh * 60 + em - (sh * 60 + sm);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      !formData.clientName ||
+      !formData.date ||
+      !formData.startTime ||
+      !formData.endTime
+    ) {
+      alert("Please fill all required fields.");
+      return;
+    }
+    if (!formData.serviceIds.length) {
+      alert("Please select at least one service.");
+      return;
+    }
+
+    const minutes = diffMinutes(formData.startTime, formData.endTime);
+    if (minutes !== null && minutes <= 60 && formData.serviceIds.length > 3) {
+      const ok = window.confirm(
+        "It looks like several services were selected for a short appointment. Are you sure the end time is correct?"
+      );
+      if (!ok) return;
+    }
+
+    const fixedPayload = {
+      ...formData,
+      nailTechId: formData.nailTechId ? Number(formData.nailTechId) : null,
+      serviceIds: formData.serviceIds.map((id) => Number(id)),
+    };
+
+    onSave(fixedPayload);
+  };
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-container">
+        <h2>{existingData ? "Edit Appointment" : "New Appointment"}</h2>
+
+        <form className="appointment-form" onSubmit={handleSubmit}>
+          <label>Client Name</label>
+          <input
+            name="clientName"
+            value={formData.clientName}
+            onChange={handleChange}
+            required
+          />
+
+          <label>Client Email (for confirmations)</label>
+          <input
+            type="email"
+            name="clientEmail"
+            value={formData.clientEmail}
+            onChange={handleChange}
+            placeholder="client@example.com"
+          />
+
+          <label>Client Phone</label>
+          <input
+            name="clientPhone"
+            value={formData.clientPhone}
+            onChange={handleChange}
+            placeholder="Optional"
+          />
+
+          <label>Date</label>
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            required
+          />
+
+          <label>Start Time</label>
+          <input
+            type="time"
+            name="startTime"
+            value={formData.startTime}
+            onChange={handleChange}
+            required
+          />
+
+          <label>
+            End Time <span style={{ color: "#a44c4c" }}>*</span>
+          </label>
+          <input
+            type="time"
+            name="endTime"
+            value={formData.endTime}
+            onChange={handleChange}
+            required
+          />
+
+          <label>Nail Technician</label>
+          <select
+            name="nailTechId"
+            value={formData.nailTechId}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select a Nail Tech</option>
+            {nailTechs.map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.name}
+              </option>
+            ))}
+          </select>
+
+          <label>Services</label>
+          <select
+            ref={selectRef}
+            multiple
+            name="serviceIds"
+            size="8"
+            value={formData.serviceIds}
+            onClick={handleServiceClick}
+            className="service-select"
+          >
+            {Object.keys(groupedServices).length === 0 && (
+              <optgroup label="No services available for this technician">
+                <option disabled>—</option>
+              </optgroup>
+            )}
+
+            {Object.keys(groupedServices).map((cat) => (
+              <optgroup key={cat} label={cat}>
+                {groupedServices[cat].map((svc) => (
+                  <option key={svc.id} value={svc.id}>
+                    {svc.name}
+                  </option>
+                ))}
+              </optgroup>
+            ))}
+          </select>
+
+          <small className="selected-services">
+            {formData.serviceIds.length > 0
+              ? `Selected: ${services
+                  .filter((s) => formData.serviceIds.includes(String(s.id)))
+                  .map((s) => s.name)
+                  .join(", ")}`
+              : "No services selected"}
+          </small>
+
+          <div className="modal-buttons">
+            <button className="save-btn" type="submit">
+              {existingData ? "Save Changes" : "Save Appointment"}
+            </button>
+            <button className="cancel-btn" type="button" onClick={onClose}>
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}

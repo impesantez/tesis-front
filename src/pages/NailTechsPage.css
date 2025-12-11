@@ -1,0 +1,577 @@
+.nailtechs-container {
+  padding: 40px;
+  background-color: #f8f7f3;
+  min-height: 100vh;
+}
+
+.nailtechs-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #1f392f;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.nailtech-form {
+  background-color: #e8f0ec;
+  border-radius: 12px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  gap: 12px;
+}
+
+.nailtech-form input {
+  border: 1px solid #b5c6bd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.days-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin: 8px 0 5px;
+}
+
+.day-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2b4c3f;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.save-tech-btn {
+  background-color: #2b4c3f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-tech-btn:hover {
+  background-color: #223a31;
+}
+
+.nailtechs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 25px;
+}
+
+.nailtech-card {
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dce5df;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nailtech-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.tech-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1f392f;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.nailtech-card p {
+  color: #2b4c3f;
+  margin: 5px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.tech-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.edit-btn {
+  background-color: #2b4c3f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn:hover {
+  background-color: #223a31;
+}
+
+.delete-btn {
+  background-color: #a44c4c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #8c3e3e;
+}
+
+/* ===== Service Selector ===== */
+.service-selector {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.category-block {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 8px 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.category-header h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2b4c3f;
+  margin: 0;
+}
+
+.category-header button {
+  background: none;
+  border: none;
+  color: #2b4c3f;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.service-chip {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(43, 76, 63, 0.3);
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  color: #1f392f;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.service-chip:hover {
+  background: rgba(43, 76, 63, 0.1);
+}
+
+.service-chip.selected {
+  background: #2b4c3f;
+  color: white;
+  border-color: #2b4c3f;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.service-tag {
+  background: #e8f0ec;
+  color: #1f392f;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.no-services {
+  color: #777;
+  font-size: 13px;
+}
+/* ===== View Details button ===== */
+.view-btn {
+  background-color: #446b59;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.view-btn:hover {
+  background-color: #2b4c3f;
+}
+
+/* ===== Modal Styles ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: #f8f7f3;
+  border-radius: 14px;
+  padding: 25px 30px;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.25s ease-out forwards;
+}
+
+.modal-content h3 {
+  color: #1f392f;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modal-content h4 {
+  color: #2b4c3f;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.close-btn {
+  background: #2b4c3f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 15px;
+  display: block;
+  margin-left: auto;
+  transition: background 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #223a31;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.service-tag.inactive {
+  background: #e3e3e3;
+  color: #888;
+  border: 1px solid #cfcfcf;
+}
+
+.not-offered-title {
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+/* ===== Modal Mejorado ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: #f8f7f3;
+  border-radius: 16px;
+  padding: 25px 30px;
+  max-width: 480px;
+  width: 90%;
+  max-height: 85vh;            /* ✅ Límite de alto visible */
+  overflow-y: auto;            /* ✅ Scroll interno */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.25s ease-out forwards;
+}
+
+/* ===== Sección Not Offered Plegable ===== */
+.not-offered-section {
+  margin-top: 18px;
+  border-top: 1px solid #d0d0d0;
+  padding-top: 10px;
+}
+
+.not-offered-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(43, 76, 63, 0.05);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.not-offered-header:hover {
+  background: rgba(43, 76, 63, 0.1);
+}
+
+.not-offered-header h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  margin: 0;
+}
+
+.arrow {
+  font-size: 14px;
+  color: #2b4c3f;
+}
+
+.not-offered-list {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Chips grises para servicios no ofrecidos */
+.service-tag.inactive {
+  background: #e3e3e3;
+  color: #888;
+  border: 1px solid #cfcfcf;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   PREMIUM LUXURY SALON — TARJETAS DE NAIL TECHS (Opción C)
+   Conserva el verde original #2b4a3d y usa dorado #c9b27b
+   ============================================================ */
+
+/* ===== TÍTULO CENTRAL ===== */
+.nailtechs-title {
+  font-size: 2.4rem !important;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: #2b4a3d;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.nailtechs-title::after {
+  content: "";
+  width: 90px;
+  height: 3px;
+  background: #c9b27b;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== GRID ===== */
+.nailtechs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 35px;
+  padding-top: 10px;
+}
+
+/* ===== TARJETA ===== */
+.nailtech-card {
+  background: #ffffff;
+  border-radius: 24px !important;
+  padding: 32px;
+  border: 1px solid rgba(201, 178, 123, 0.35); /* suave dorado */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nailtech-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.15);
+  border-color: #c9b27b;
+}
+
+/* Línea dorada decorativa */
+.nailtech-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background: #c9b27b;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+/* ===== NOMBRE DEL TECH ===== */
+.tech-name {
+  font-family: "Playfair Display", serif !important;
+  text-align: center;
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  color: #2b4a3d;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== PARRAFOS ===== */
+.nailtech-card p {
+  color: #2b4a3d;
+  margin: 4px 0;
+  font-size: 1rem !important;
+  font-weight: 500;
+}
+
+/* ===== BADGES DE DISPONIBILIDAD ===== */
+.day-chip {
+  background: #f3f7f5 !important;
+  border: 1px solid #c9b27b !important;
+  color: #2b4a3d !important;
+  padding: 6px 12px !important;
+  border-radius: 20px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+
+.days-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* ===== BOTONES ===== */
+.tech-actions button {
+  border-radius: 12px !important;
+  font-size: 0.95rem !important;
+  font-weight: 600;
+  padding: 8px 16px !important;
+  transition: all 0.25s ease;
+}
+
+/* Editar */
+.edit-btn {
+  background: #2b4a3d !important;
+  color: white !important;
+}
+.edit-btn:hover {
+  background: #22382f !important;
+}
+
+/* Delete */
+.delete-btn {
+  background: #b15c5c !important;
+}
+.delete-btn:hover {
+  background: #944c4c !important;
+}
+
+/* View Details */
+.view-btn {
+  background: #c9b27b !important;
+  color: #2b4a3d !important;
+  border: none !important;
+}
+.view-btn:hover {
+  background: #bba16f !important;
+}
+
+/* ===== MODAL PREMIUM ===== */
+.modal-content {
+  border-radius: 22px !important;
+  border: 1px solid rgba(201,178,123,0.45);
+  background: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18) !important;
+  padding: 35px !important;
+}
+
+.modal-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.7rem !important;
+  font-weight: 700;
+  color: #2b4a3d;
+}
+
+.modal-content h4 {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #2b4a3d;
+  border-left: 4px solid #c9b27b;
+  padding-left: 8px;
+}
+
+/* Cerrar */
+.close-btn {
+  background: #2b4a3d !important;
+}
+.close-btn:hover {
+  background: #22382f !important;
+}
+
+

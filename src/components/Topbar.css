@@ -1,0 +1,41 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #295e42;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-logo .logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.topbar-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.week-btn, .new-appointment-btn {
+  background-color: white;
+  color: #295e42;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.week-btn:hover, .new-appointment-btn:hover {
+  background-color: #fce4f1;
+}
