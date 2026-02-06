@@ -1,11 +1,10 @@
-/* Fondo general */
+
 body {
   background-color: #f8f7f3;
   margin: 0;
   font-family: "Inter", sans-serif;
 }
 
-/* Contenedor principal del login */
 .login-container {
   display: flex;
   justify-content: center;
@@ -14,7 +13,6 @@ body {
   background: linear-gradient(135deg, #2b4c3f 0%, #4c735b 100%);
 }
 
-/* Fondo general - ahora ocupa toda la pantalla */
 html, body {
   height: 100%;
   margin: 0;
@@ -23,7 +21,6 @@ html, body {
   background: linear-gradient(135deg, #2b4c3f 0%, #4c735b 100%);
 }
 
-/* Centra el contenido del login */
 .login-container {
   display: flex;
   justify-content: center;
@@ -32,7 +29,6 @@ html, body {
   width: 100%;
 }
 
-/* Caja del formulario */
 .login-form {
   background-color: #ffffff;
   padding: 40px 50px;
@@ -50,7 +46,6 @@ html, body {
   color: #2b4c3f;
 }
 
-/* Inputs */
 .login-form input {
   width: 100%;
   padding: 12px;
@@ -67,7 +62,6 @@ html, body {
   box-shadow: 0 0 4px rgba(43, 76, 63, 0.3);
 }
 
-/* Botón principal */
 .login-form button {
   width: 100%;
   background-color: #2b4c3f;
@@ -87,7 +81,6 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* Texto inferior */
 .login-form p {
   font-size: 14px;
   color: #444;
@@ -99,6 +92,7 @@ html, body {
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
+  font-family: "Playfair Display", serif;
 }
 
 .login-form span:hover {
@@ -106,7 +100,6 @@ html, body {
   text-decoration: underline;
 }
 
-/* Animación de entrada */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -118,15 +111,13 @@ html, body {
   }
 }
 
-/* ==== FULL BACKGROUND ==== */
 html, body {
   height: 100%;
   margin: 0;
-  font-family: "Inter", sans-serif;
   background: linear-gradient(135deg, #2b4a3d 0%, #446b59 100%);
+  font-family: "Playfair Display", serif;
 }
 
-/* ==== CENTER CONTENT ==== */
 .login-container {
   display: flex;
   justify-content: center;
@@ -134,7 +125,6 @@ html, body {
   height: 100%;
 }
 
-/* ==== LOGIN CARD (PREMIUM STYLE) ==== */
 .luxury-login {
   background: #ffffffee;
   backdrop-filter: blur(6px);
@@ -142,7 +132,7 @@ html, body {
   width: 380px;
   border-radius: 20px;
   box-shadow: 0 12px 28px rgba(0,0,0,0.22);
-  border-top: 6px solid #c9b27b;    /* 💛 Golden bar */
+  border-top: 6px solid #c9b27b;    
   animation: fadePop 0.45s ease;
 }
 
@@ -152,9 +142,9 @@ html, body {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.5px;
+  font-family: "Playfair Display", serif;
 }
 
-/* ==== INPUTS (FROSTED) ==== */
 .luxury-login input {
   width: 100%;
   padding: 14px;
@@ -164,6 +154,7 @@ html, body {
   background: #f7f9fc;
   font-size: 15px;
   transition: 0.25s ease;
+  font-family: "Playfair Display", serif;
 }
 
 .luxury-login input:focus {
@@ -171,7 +162,6 @@ html, body {
   box-shadow: 0 0 6px rgba(201,178,123,0.5);
 }
 
-/* ==== LUXURY BUTTON ==== */
 .luxury-btn {
   width: 100%;
   padding: 14px;
@@ -185,6 +175,7 @@ html, body {
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-family: "Playfair Display", serif;
 }
 
 .luxury-btn:hover {
@@ -193,7 +184,6 @@ html, body {
   box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }
 
-/* ==== ANIMATION ==== */
 @keyframes fadePop {
   from {
     opacity: 0;
@@ -205,3 +195,86 @@ html, body {
   }
 }
 
+.login-form,
+.luxury-login,
+.login-form input,
+.luxury-login input,
+.login-form button,
+.luxury-btn {
+  box-sizing: border-box;
+}
+
+.login-form input,
+.luxury-login input,
+.login-form button,
+.luxury-btn {
+  width: 100%;
+  display: block;
+}
+
+.login-form input,
+.luxury-login input {
+  height: 48px;
+  line-height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.login-form button,
+.luxury-btn {
+  height: 48px;
+  line-height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.login-form input,
+.luxury-login input {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.login-form button,
+.luxury-btn {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.login-form,
+.luxury-login {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-form,
+.luxury-login {
+  width: 420px;         
+  max-width: 90vw;
+  padding: 55px 60px;   
+}
+
+.login-form h2,
+.luxury-login h2 {
+  font-size: 28px;
+  margin-bottom: 32px;
+}
+
+.login-form input,
+.luxury-login input {
+  height: 52px;
+  line-height: 52px;
+  font-size: 15px;
+}
+
+.login-form button,
+.luxury-btn {
+  height: 52px;
+  line-height: 52px;
+  font-size: 17px;
+  margin-top: 18px;
+}
+
+.login-form p {
+  margin-top: 22px;
+  font-size: 15px;
+}

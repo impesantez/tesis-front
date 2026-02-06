@@ -26,7 +26,6 @@ export default function Topbar({ currentWeek, onPrevWeek, onNextWeek, onNewAppoi
         </h2>
       </div>
 
-      {/* Week navigation and actions */}
       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
         <button
           onClick={onPrevWeek}

@@ -10,13 +10,33 @@ export default function ContactUsPage() {
         <h2 className="section-title">Salon Information</h2>
 
         <div className="info-block">
-          <p><strong>Address:</strong></p>
+          <p><strong>Visit us:</strong></p>
           <p>10864 La Grange Avenue<br />Los Angeles, CA 90025</p>
         </div>
 
         <div className="info-block">
-          <p><strong>Phone:</strong></p>
+          <p><strong>Call us today:</strong></p>
           <p>(323) 629-7577</p>
+        </div>
+
+        <div className="social-buttons">
+          <a
+            href="https://www.instagram.com/getnaildla"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-btn instagram"
+          >
+            <span className="icon">📸</span> Instagram
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@getnaildla"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-btn tiktok"
+          >
+            <span className="icon">🎵</span> TikTok
+          </a>
         </div>
       </div>
 
@@ -28,7 +48,7 @@ export default function ContactUsPage() {
           style={{ border: 0, borderRadius: "12px" }}
           loading="lazy"
           allowFullScreen
-          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAtkrI_NnmY_jrkXjBa3w60zY0ojTUWo2E&q=Get+Nail'd+La,10864+La+Grange+Avenue+Los+Angeles`}
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAtkrI_NnmY_jrkXjBa3w60zY0ojTUWo2E&q=Get+Nail'd+LA,10864+La+Grange+Avenue+Los+Angeles"
         ></iframe>
       </div>
     </div>

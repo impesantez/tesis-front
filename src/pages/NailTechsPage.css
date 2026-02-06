@@ -1,8 +1,37 @@
+
 .nailtechs-container {
   padding: 40px;
-  background-color: #f8f7f3;
-  min-height: 100vh;
+  background-color: #f6fbf8 !important;
+
+  background-image:
+    radial-gradient(circle at 12px 12px, rgba(43, 76, 63, 0.10) 0 1.2px, transparent 1.2px 12px),
+    radial-gradient(circle at 36px 36px, rgba(43, 76, 63, 0.08) 0 1.1px, transparent 1.1px 12px),
+    radial-gradient(circle at 12px 36px, rgba(43, 76, 63, 0.06) 0 0.9px, transparent 0.9px 12px),
+    radial-gradient(circle at 36px 12px, rgba(43, 76, 63, 0.06) 0 0.9px, transparent 0.9px 12px),
+    repeating-radial-gradient(circle at 24px 24px,
+      rgba(43, 76, 63, 0.07) 0 1px,
+      transparent 1px 9px
+    ) !important;
+
+  background-size: 48px 48px !important;
+  background-attachment: fixed !important;
+  position: relative;
 }
+
+.nailtechs-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 76, 63, 0.04);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nailtechs-container > * {
+  position: relative;
+  z-index: 1;
+}
+
 
 .nailtechs-title {
   text-align: center;
@@ -11,6 +40,7 @@
   margin-bottom: 30px;
   font-weight: 600;
   letter-spacing: 0.5px;
+  font-family: "Playfair Display", serif;
 }
 
 .nailtech-form {
@@ -23,6 +53,7 @@
   margin: 0 auto 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   gap: 12px;
+  font-family: "Playfair Display", serif;
 }
 
 .nailtech-form input {
@@ -30,7 +61,8 @@
   border-radius: 8px;
   padding: 10px;
   font-size: 1rem;
-  font-family: inherit;
+  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
 }
 
 .days-checkboxes {
@@ -47,6 +79,7 @@
   color: #2b4c3f;
   font-weight: 500;
   font-size: 0.95rem;
+  font-family: "Playfair Display", serif;
 }
 
 .save-tech-btn {
@@ -59,6 +92,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: "Playfair Display", serif;
 }
 
 .save-tech-btn:hover {
@@ -91,6 +125,7 @@
   color: #1f392f;
   margin-bottom: 10px;
   text-align: center;
+  font-family: "Playfair Display", serif;
 }
 
 .nailtech-card p {
@@ -98,6 +133,7 @@
   margin: 5px 0;
   font-size: 0.95rem;
   line-height: 1.4;
+  font-family: "Playfair Display", serif;
 }
 
 .tech-actions {
@@ -116,6 +152,7 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-family: "Playfair Display", serif;
 }
 
 .edit-btn:hover {
@@ -131,13 +168,13 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-family: "Playfair Display", serif;
 }
 
 .delete-btn:hover {
   background-color: #8c3e3e;
 }
 
-/* ===== Service Selector ===== */
 .service-selector {
   margin-top: 10px;
   display: flex;
@@ -164,6 +201,7 @@
   font-weight: 700;
   color: #2b4c3f;
   margin: 0;
+  font-family: "Playfair Display", serif;
 }
 
 .category-header button {
@@ -174,6 +212,7 @@
   font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
+  font-family: "Playfair Display", serif;
 }
 
 .service-grid {
@@ -191,6 +230,7 @@
   color: #1f392f;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
+  font-family: "Playfair Display", serif;
 }
 
 .service-chip:hover {
@@ -216,13 +256,15 @@
   border-radius: 6px;
   padding: 4px 8px;
   font-size: 12px;
+  font-family: "Playfair Display", serif;
 }
 
 .no-services {
   color: #777;
   font-size: 13px;
+  font-family: "Playfair Display", serif;
 }
-/* ===== View Details button ===== */
+
 .view-btn {
   background-color: #446b59;
   color: #fff;
@@ -232,12 +274,12 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-family: "Playfair Display", serif;
 }
 .view-btn:hover {
   background-color: #2b4c3f;
 }
 
-/* ===== Modal Styles ===== */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -267,6 +309,7 @@
   margin-bottom: 10px;
   font-size: 1.5rem;
   font-weight: 700;
+  font-family: "Playfair Display", serif;
 }
 
 .modal-content h4 {
@@ -274,6 +317,7 @@
   margin-top: 12px;
   margin-bottom: 6px;
   font-size: 1rem;
+  font-family: "Playfair Display", serif;
 }
 
 .close-btn {
@@ -288,6 +332,7 @@
   display: block;
   margin-left: auto;
   transition: background 0.2s ease;
+  font-family: "Playfair Display", serif;
 }
 
 .close-btn:hover {
@@ -317,8 +362,9 @@
   color: #666;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-family: "Playfair Display", serif;
 }
-/* ===== Modal Mejorado ===== */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -336,13 +382,12 @@
   padding: 25px 30px;
   max-width: 480px;
   width: 90%;
-  max-height: 85vh;            /* ✅ Límite de alto visible */
-  overflow-y: auto;            /* ✅ Scroll interno */
+  max-height: 85vh;        
+  overflow-y: auto;          
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   animation: fadeInUp 0.25s ease-out forwards;
 }
 
-/* ===== Sección Not Offered Plegable ===== */
 .not-offered-section {
   margin-top: 18px;
   border-top: 1px solid #d0d0d0;
@@ -370,11 +415,13 @@
   font-weight: 600;
   color: #555;
   margin: 0;
+  font-family: "Playfair Display", serif;
 }
 
 .arrow {
   font-size: 14px;
   color: #2b4c3f;
+  font-family: "Playfair Display", serif;
 }
 
 .not-offered-list {
@@ -384,7 +431,6 @@
   gap: 6px;
 }
 
-/* Chips grises para servicios no ofrecidos */
 .service-tag.inactive {
   background: #e3e3e3;
   color: #888;
@@ -402,12 +448,6 @@
   }
 }
 
-/* ============================================================
-   PREMIUM LUXURY SALON — TARJETAS DE NAIL TECHS (Opción C)
-   Conserva el verde original #2b4a3d y usa dorado #c9b27b
-   ============================================================ */
-
-/* ===== TÍTULO CENTRAL ===== */
 .nailtechs-title {
   font-size: 2.4rem !important;
   font-family: "Playfair Display", serif;
@@ -428,7 +468,6 @@
   border-radius: 2px;
 }
 
-/* ===== GRID ===== */
 .nailtechs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -436,12 +475,11 @@
   padding-top: 10px;
 }
 
-/* ===== TARJETA ===== */
 .nailtech-card {
   background: #ffffff;
   border-radius: 24px !important;
   padding: 32px;
-  border: 1px solid rgba(201, 178, 123, 0.35); /* suave dorado */
+  border: 1px solid rgba(201, 178, 123, 0.35); 
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
   position: relative;
@@ -453,7 +491,6 @@
   border-color: #c9b27b;
 }
 
-/* Línea dorada decorativa */
 .nailtech-card::before {
   content: "";
   position: absolute;
@@ -466,7 +503,6 @@
   opacity: 0.7;
 }
 
-/* ===== NOMBRE DEL TECH ===== */
 .tech-name {
   font-family: "Playfair Display", serif !important;
   text-align: center;
@@ -477,15 +513,14 @@
   letter-spacing: 0.5px;
 }
 
-/* ===== PARRAFOS ===== */
 .nailtech-card p {
   color: #2b4a3d;
   margin: 4px 0;
   font-size: 1rem !important;
   font-weight: 500;
+  font-family: "Playfair Display", serif;
 }
 
-/* ===== BADGES DE DISPONIBILIDAD ===== */
 .day-chip {
   background: #f3f7f5 !important;
   border: 1px solid #c9b27b !important;
@@ -497,6 +532,7 @@
   letter-spacing: 0.3px;
   display: inline-block;
   box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+  font-family: "Playfair Display", serif;
 }
 
 .days-chips {
@@ -506,16 +542,15 @@
   margin-top: 10px;
 }
 
-/* ===== BOTONES ===== */
 .tech-actions button {
   border-radius: 12px !important;
   font-size: 0.95rem !important;
   font-weight: 600;
   padding: 8px 16px !important;
   transition: all 0.25s ease;
+  font-family: "Playfair Display", serif;
 }
 
-/* Editar */
 .edit-btn {
   background: #2b4a3d !important;
   color: white !important;
@@ -524,7 +559,6 @@
   background: #22382f !important;
 }
 
-/* Delete */
 .delete-btn {
   background: #b15c5c !important;
 }
@@ -532,7 +566,6 @@
   background: #944c4c !important;
 }
 
-/* View Details */
 .view-btn {
   background: #c9b27b !important;
   color: #2b4a3d !important;
@@ -542,7 +575,6 @@
   background: #bba16f !important;
 }
 
-/* ===== MODAL PREMIUM ===== */
 .modal-content {
   border-radius: 22px !important;
   border: 1px solid rgba(201,178,123,0.45);
@@ -564,9 +596,9 @@
   color: #2b4a3d;
   border-left: 4px solid #c9b27b;
   padding-left: 8px;
+  font-family: "Playfair Display", serif;
 }
 
-/* Cerrar */
 .close-btn {
   background: #2b4a3d !important;
 }

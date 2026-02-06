@@ -1,56 +1,79 @@
 .sales-report-container {
-  background-color: #f8f7f3;
+  padding: 40px 20px;
   min-height: 100vh;
-  padding: 40px;
+  box-sizing: border-box;
+
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sales-title {
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #1f392f;
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+
+  border-bottom: 2px solid rgba(201, 178, 123, 0.85);
+  padding-bottom: 6px;
 }
 
 .sales-subtitle {
-  color: #555;
-  font-size: 16px;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  color: #2b4c3f;
   margin-bottom: 30px;
   text-align: center;
 }
 
 .sales-table {
-  display: flex;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(2px);
+
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+  border: 1px solid rgba(219, 229, 223, 0.95);
+
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
 }
 
-table {
-  width: 70%;
+.sales-table table {
+  width: 100%;
   border-collapse: collapse;
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  overflow: hidden;
 }
 
-th, td {
-  padding: 16px;
+.sales-table thead th {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  padding: 14px 10px;
+  color: #1f392f;
+  border-bottom: 2px solid rgba(201, 178, 123, 0.85);
+}
+
+.sales-table tbody td {
+  font-family: "Playfair Display", serif;
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  color: #2b4c3f;
+}
+
+.sales-table tbody tr td[colspan] {
   text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #2b4c3f;
-  color: white;
-}
-
-tr:last-child td {
-  border-bottom: none;
+  color: #888;
+  padding: 20px;
+  font-style: italic;
 }
 
 .unauthorized {
-  text-align: center;
-  color: #a44c4c;
-  font-weight: bold;
-  margin-top: 50px;
+  font-family: "Playfair Display", serif;
+  color: #b00000;
+  padding: 40px;
 }

@@ -222,7 +222,6 @@ export default function NailTechsPage({ role, onChange }) {
           <div key={tech.id} className="nailtech-card">
             <h3 className="tech-name">{tech.name}</h3>
 
-            {/* 👉 Viewer: oculta contacto */}
             {!isViewer && (
               <>
                 <p><strong>Email:</strong> {tech.email || "—"}</p>
@@ -257,8 +256,7 @@ export default function NailTechsPage({ role, onChange }) {
           </div>
         ))}
       </div>
-
-      {/* MODAL DETALLES */}
+      
       {selectedTech && (
         <div className="modal-overlay" onClick={() => setSelectedTech(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
